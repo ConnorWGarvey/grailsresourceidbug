@@ -1,4 +1,4 @@
-package message.id.bug
+package id.bug
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

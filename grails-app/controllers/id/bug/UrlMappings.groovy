@@ -1,4 +1,4 @@
-package message.id.bug
+package id.bug
 
 class UrlMappings {
   static mappings = {

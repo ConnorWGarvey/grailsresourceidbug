@@ -50,7 +50,7 @@ environments:
 grails:
     profile: web
     codegen:
-        defaultPackage: message.id.bug
+        defaultPackage: id.bug
     spring:
         transactionManagement:
             proxies: false

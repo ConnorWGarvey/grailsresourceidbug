@@ -1,4 +1,4 @@
-package message.id.bug
+package id.bug
 
 import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY
 import grails.plugins.rest.client.RestBuilder

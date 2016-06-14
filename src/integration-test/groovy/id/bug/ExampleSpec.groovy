@@ -1,4 +1,4 @@
-package message.id.bug
+package id.bug
 
 import grails.test.mixin.integration.Integration
 import grails.transaction.*
