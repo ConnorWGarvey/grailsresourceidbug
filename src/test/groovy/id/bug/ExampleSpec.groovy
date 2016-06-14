@@ -1,6 +1,6 @@
 package id.bug
 
-import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY
+import static org.springframework.http.HttpStatus.NOT_FOUND
 import grails.plugins.rest.client.RestBuilder
 import grails.test.mixin.integration.Integration
 import spock.lang.Specification
@@ -12,7 +12,15 @@ import spock.lang.Unroll
 @Integration @Unroll class ExampleSpec extends Specification {
   def 'invalid ID for #method'() {
     when: def response = new RestBuilder()."$method"('http://localhost:8080/examples/notavalidid')
-    then: response.statusCode == UNPROCESSABLE_ENTITY
+    then: response.statusCode == NOT_FOUND
     where: method << ['delete', 'get']
+  }
+
+  def 'invalid ID for update using #method'() {
+    when: def response = new RestBuilder()."$method"('http://localhost:8080/examples/notavalidid') {
+      json { text = 'text' }
+    }
+    then: response.statusCode == NOT_FOUND
+    where: method << ['post', 'put']
   }
 }
